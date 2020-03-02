@@ -51,7 +51,7 @@
 				pos: self.pos
 		Label:
 			text: 'MEMORY'
-			font_name: 'slkscre'
+			font_name: '_fonts/slkscre.ttf'
 			color: .1, 1, .1, 1
 			font_size: 15
 			size_hint: .345, None
@@ -67,7 +67,7 @@
 			
 		Label:
 			text: 'Vizualizador do uso da memoria'
-			font_name: 'DejaVuSans'
+			font_name: '_fonts/DejaVuSans.ttf'
 			color: .98, .98, .98, 1
 			size_hint: 1, None
 			height: 37
@@ -191,7 +191,7 @@
 				padding: 10
 					
 <TopTableItem>:
-	font_name: 'DejaVuSans'
+	font_name: '_fonts/DejaVuSans.ttf'
 	canvas.before:
 		Color:
 			#rgba: .01, .015, .02, 1
@@ -214,7 +214,7 @@
 	BoxLayout:
 		Label: 
 			id: name
-			text: 'Name'
+			font_name: '_fonts/DejaVuSans.ttf'	
 			canvas.before:
 				Color:
 					rgba: .01, .015, .02, 1
@@ -223,7 +223,7 @@
 					pos: self.pos
 		Label:
 			id: pid
-			text: 'Pid'
+			font_name: '_fonts/DejaVuSans.ttf'
 			canvas.before:
 				Color:
 					rgba: .01, .015, .02, 1
@@ -232,7 +232,7 @@
 					pos: self.pos
 		Label:
 			id: memory
-			text: 'Memory'
+			font_name: '_fonts/DejaVuSans.ttf'
 			canvas.before:
 				Color:
 					rgba: .01, .015, .02, 1
@@ -242,7 +242,7 @@
 		
 		Label:
 			id: user
-			text: 'User'
+			font_name: '_fonts/DejaVuSans.ttf'
 			canvas.before:
 				Color:
 					rgba: .01, .015, .02, 1
