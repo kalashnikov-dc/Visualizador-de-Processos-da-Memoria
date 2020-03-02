@@ -1,0 +1,255 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import Factory kivy.factory.Factory
+
+<RootScreen>:
+	Screen:
+	Home:
+
+<Home>:
+	name: 'home'
+	BoxLayout:
+		orientation: 'vertical'
+		size_hint: None, None
+		width: 800
+		height: 500
+		canvas.before:
+			Color:
+				rgba: .1, .1, .14, 1
+			Rectangle:
+				size: self.size
+				pos: self.pos
+		Head:
+
+		BoxLayout:
+			id: body
+			size_hint: None, None
+			width:792
+			height:461
+			pos_hint: dict(center_x=.5, center_y=.469)
+			orientation: 'horizontal'
+			canvas.before:
+				Color:
+					rgba: .01, .015, .02, 1
+				Rectangle:
+					pos: self.pos
+					size: self.size
+			
+			LeftBody:
+			RightBody:
+					
+
+
+
+<Head>:
+	BoxLayout:
+			
+		canvas.before:
+			Color:
+				rgba: .4, .4, .57, 1
+			Rectangle:
+				size: self.size
+				pos: self.pos
+		Label:
+			text: 'MEMORY'
+			font_name: 'slkscre'
+			color: .1, 1, .1, 1
+			font_size: 15
+			size_hint: .345, None
+			height: 37
+			canvas.before:
+				Color:
+					rgba: .01, .015, .02, 1
+				Rectangle:
+					size: self.size[0]-2, self.size[1]-2
+					pos: self.pos[0]+1, self.pos[1]+1
+						
+				
+			
+		Label:
+			text: 'Vizualizador do uso da memoria'
+			font_name: 'DejaVuSans'
+			color: .98, .98, .98, 1
+			size_hint: 1, None
+			height: 37
+
+			canvas.before:
+				Color:
+					rgba: .01, .015, .02, 1
+				Rectangle:
+					size: self.size[0]-2, self.size[1]-2
+					pos: self.pos[0]+1, self.pos[1]+1
+					
+<LeftBody>:
+	BoxLayout:
+		size_hint: None, 1
+		width: 200
+		orientation: 'vertical'
+		canvas.before:
+			Color:
+				rgba: .4, .4, .57, 1
+			Rectangle:
+				size: self.size
+				pos: self.pos
+
+			Color:	
+				rgba: .15, .10, .2, 1
+
+			Rectangle:
+				size: self.size[0]-2, self.size[1]-2
+				pos: self.pos[0]+1, self.pos[1]+1
+
+
+				
+		AsyncImage:
+			allow_stretch: True
+			source: 'memo.png'
+			size_hint: None, None
+			width: 180
+			pos_hint: dict(center_x=.5, centerx_y=.8)
+					
+					
+		GridLayout:
+			size_hint: 1, None
+			height: 360	
+			cols:2
+					
+
+			BoxLayout:
+				id: tipo
+				orientation: 'vertical'
+				size_hint: .5, .98
+				canvas.before:
+					Color:
+						rgba: .01, .015, .02,1
+					Rectangle:
+						size: self.size[0]-2, self.size[1]-2
+						pos: self.pos[0]+1, self.pos[1]+1
+						
+			BoxLayout:	
+				id: info
+				orientation: 'vertical'
+
+				canvas.before:
+					Color:
+						#rgba: .4, .4, .57, 1 
+						rgba: .4, .4, .57, 1
+					Rectangle:
+						size: self.size
+						pos: self.pos
+
+					Color:
+						rgba: .04, .04, .04, 1
+
+					Rectangle:
+						pos: self.pos[0]+2, self.pos[1]+2
+						size: self.size[0]-4, self.size[1]-4
+
+
+
+
+<RightBody>:
+	orientation: 'vertical'	
+	size_hint: None, 1
+	width: 600
+					
+	BoxLayout:
+		
+		id: head_table
+		orientation: 'horizontal'
+		size_hint: 1, None
+		height: 26
+
+		canvas.before:
+			Color:
+				rgba: .4, .4, .57, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+					
+	BoxLayout:
+		canvas.before:
+			Color:
+				rgba: .4, .4, .57, 1
+			Rectangle:
+				size: self.size
+				pos: self.pos
+			
+
+
+			Color:
+				rgba: .01, .015, .02, 1
+			Rectangle:
+				size: self.size[0]-2, self.size[1]-2
+				pos: self.pos[0]+1, self.pos[1]+1
+
+		ScrollView:
+			BoxLayout:
+				id: body_table
+				orientation: 'vertical'
+				size_hint_y: None
+				height: self.minimum_height
+				padding: 10
+					
+<TopTableItem>:
+	font_name: 'DejaVuSans'
+	canvas.before:
+		Color:
+			#rgba: .01, .015, .02, 1
+			rgba: .16, .13, .19, 1
+		Rectangle:
+			size: self.size[0]-2, self.size[1]-2
+			pos: self.pos[0]+1, self.pos[1]+1
+
+	
+<BodyTableItem>:	
+	size_hint_y: None
+	height: 30
+	padding: 1
+	canvas.before:
+		Color: 
+			rgba: .09, .09, .09, 1
+		Rectangle:
+			size: self.size
+			pos: self.pos
+	BoxLayout:
+		Label: 
+			id: name
+			text: 'Name'
+			canvas.before:
+				Color:
+					rgba: .01, .015, .02, 1
+				Rectangle:
+					size: self.size
+					pos: self.pos
+		Label:
+			id: pid
+			text: 'Pid'
+			canvas.before:
+				Color:
+					rgba: .01, .015, .02, 1
+				Rectangle:
+					size: self.size
+					pos: self.pos
+		Label:
+			id: memory
+			text: 'Memory'
+			canvas.before:
+				Color:
+					rgba: .01, .015, .02, 1
+				Rectangle:
+					size: self.size
+					pos: self.pos
+		
+		Label:
+			id: user
+			text: 'User'
+			canvas.before:
+				Color:
+					rgba: .01, .015, .02, 1
+				Rectangle:
+					size: self.size
+					pos: self.pos
+
+		
+	
+
